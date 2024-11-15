@@ -11,18 +11,18 @@ const Jobs = () => {
     const { allJobs, searchedQuery } = useSelector(store => store.job);
     const [filterJobs, setFilterJobs] = useState(allJobs);
 
-    useEffect(() => {
-        if (searchedQuery) {
-            const filteredJobs = allJobs.filter((job) => {
-                return job.title.toLowerCase().includes(searchedQuery.toLowerCase()) ||
-                    job.description.toLowerCase().includes(searchedQuery.toLowerCase()) ||
-                    job.location.toLowerCase().includes(searchedQuery.toLowerCase())
-            })
-            setFilterJobs(filteredJobs)
-        } else {
-            setFilterJobs(allJobs)
-        }
-    }, [allJobs, searchedQuery]);
+    // useEffect(() => {
+    //     if (searchedQuery) {
+    //         const filteredJobs = allJobs.filter((job) => {
+    //             return job.title.toLowerCase().includes(searchedQuery.toLowerCase()) ||
+    //                 job.description.toLowerCase().includes(searchedQuery.toLowerCase()) ||
+    //                 job.location.toLowerCase().includes(searchedQuery.toLowerCase())
+    //         })
+    //         setFilterJobs(filteredJobs)
+    //     } else {
+    //         setFilterJobs(allJobs)
+    //     }
+    // }, [allJobs, searchedQuery]);
 
     return (
         <div>
@@ -30,7 +30,7 @@ const Jobs = () => {
             <div className='max-w-7xl mx-auto mt-5'>
                 <div className='flex gap-5'>
                     <div className='w-20%'>
-                        <FilterCard />
+                        {/* <FilterCard /> */}
                     </div>
                     {
                         filterJobs.length <= 0 ? <span>Job not found</span> : (
